@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Diese Seite soll nicht in Suchmaschinen auftauchen -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Impressum – PacoRepoSo</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<style>
+  :root{--bg:#0b0b14;--card:#171728;--line:#2a2a44;--text:#ececf5;--muted:#a3a3bd;--accent:#9b5cff;--accent2:#22d3ee}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 60px}
+  a{color:var(--accent2)}
+  .back{display:inline-block;margin-bottom:24px;color:var(--muted);text-decoration:none}
+  h1{font-size:32px;margin:0 0 20px}
+  h2{font-size:18px;margin:28px 0 8px;color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  p{margin:0 0 10px}
+  .muted{color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">‹ Zurück zur Startseite</a>
+  <h1>Impressum</h1>
+
+  <div class="card">
+    <h2 style="margin-top:0">Angaben gemäß § 5 DDG</h2>
+    <!-- HIER ANPASSEN: echter Vor- und Nachname + c/o-Adresse deines Impressum-Dienstes -->
+    <p>
+      Francisco [NACHNAME]<br>
+      c/o [NAME DES ADRESS-DIENSTES]<br>
+      [STRASSE HAUSNUMMER]<br>
+      [PLZ ORT]<br>
+      Deutschland
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <span class="js-mail"></span><noscript>[E-Mail-Adresse – bitte JavaScript aktivieren]</noscript></p>
+    <p>Discord: <a href="https://discord.gg/6CXZU9y3ng" target="_blank" rel="noopener">discord.gg/6CXZU9y3ng</a></p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>Francisco [NACHNAME], Anschrift wie oben</p>
+
+    <h2>Geltungsbereich</h2>
+    <p>Dieses Impressum gilt auch für meine Kanäle und Profile:<br>
+      Twitch: <a href="https://www.twitch.tv/pacoreposo" target="_blank" rel="noopener">twitch.tv/pacoreposo</a><br>
+      YouTube: <a href="https://www.youtube.com/@pacoreposo" target="_blank" rel="noopener">youtube.com/@pacoreposo</a><br>
+      Instagram: <a href="https://www.instagram.com/paco.reposo/" target="_blank" rel="noopener">instagram.com/paco.reposo</a><br>
+      Discord: <a href="https://discord.gg/6CXZU9y3ng" target="_blank" rel="noopener">discord.gg/6CXZU9y3ng</a><br>
+      Ko-fi: <a href="https://ko-fi.com/pacoreposo" target="_blank" rel="noopener">ko-fi.com/pacoreposo</a></p>
+
+    <h2>Haftung für Links</h2>
+    <p>Diese Seite enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Sollten mir Rechtsverletzungen bekannt werden, entferne ich entsprechende Links umgehend.</p>
+
+    <h2>Verbraucherstreitbeilegung</h2>
+    <p>Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  </div>
+
+  <p class="muted" style="margin-top:20px"><a href="datenschutz.html">Datenschutzerklärung</a></p>
+</div>
+<script>
+  // HIER ANPASSEN: Teil vor dem @ deiner WEB.DE-Adresse (gleich wie in index.html)
+  var u = "DEINE-ADRESSE", d = "web" + "." + "de";
+  document.querySelectorAll(".js-mail").forEach(function(el){
+    var m = u + "@" + d, a = document.createElement("a");
+    a.href = "mai" + "lto:" + m; a.textContent = m; el.appendChild(a);
+  });
+</script>
+</body>
+</html>

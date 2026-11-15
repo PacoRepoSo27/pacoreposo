@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PacoRepoSo – Gaming & Streaming</title>
+<meta name="description" content="PacoRepoSo – Gaming, Livestreams auf Twitch und Videos auf YouTube.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<style>
+  :root{
+    --bg:#0b0b14; --bg2:#12121f; --card:#171728; --line:#2a2a44;
+    --text:#ececf5; --muted:#a3a3bd; --accent:#9b5cff; --accent2:#22d3ee;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -200px,#2a1550 0%,transparent 60%),var(--bg);
+    background-repeat:no-repeat;color:var(--text);line-height:1.6}
+  html{background:var(--bg)}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* Kopf */
+  header{text-align:center;padding:64px 0 28px}
+  /* Setup-Foto als Banner oben, läuft nach unten in den Hintergrund aus */
+  .hero{position:relative;
+    background:linear-gradient(to bottom,rgba(11,11,20,.15) 0%,rgba(11,11,20,.35) 55%,var(--bg) 100%),
+      url("hintergrund.jpg") center 40%/cover no-repeat}
+  .hero header{padding:90px 0 60px}
+  .hero .tagline{color:#d6d6ea}
+  @media (min-width:900px){.hero header{padding:130px 0 120px}}
+  .avatar{width:112px;height:112px;border-radius:50%;margin:0 auto 18px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:grid;place-items:center;font-size:44px;font-weight:800;color:#0b0b14;
+    box-shadow:0 0 40px rgba(155,92,255,.45)}
+  /* Eigenes Bild: <img class="avatar" src="profilbild.jpg" alt="PacoRepoSo"> */
+  img.avatar{object-fit:cover;display:block;border:3px solid var(--accent2);background:#fff}
+  h1{margin:0;font-size:clamp(32px,7vw,48px);letter-spacing:.5px}
+  h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{color:var(--muted);margin:6px 0 0;font-size:18px}
+
+  /* Abschnitte */
+  section{margin:28px 0}
+  h2{font-size:20px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+  h2::before{content:"";width:6px;height:22px;border-radius:3px;
+    background:linear-gradient(var(--accent),var(--accent2))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .card p{margin:0 0 10px}.card p:last-child{margin:0}
+
+  /* Links */
+  .links{display:grid;gap:12px}
+  .btn{display:flex;align-items:center;gap:14px;text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;transition:transform .15s,border-color .15s,box-shadow .15s}
+  .btn:hover,.btn:focus-visible{transform:translateY(-2px);border-color:var(--c);
+    box-shadow:0 6px 24px -8px var(--c);outline:none}
+  .dot{width:42px;height:42px;border-radius:12px;background:var(--c);flex:none;
+    display:grid;place-items:center;font-weight:800;color:#fff;font-size:15px}
+  .btn b{display:block;font-size:17px}
+  .btn small{color:var(--muted);font-size:14px}
+  .arrow{margin-left:auto;color:var(--muted);font-size:20px}
+  .twitch{--c:#9146ff}.youtube{--c:#ff2d2d}.insta{--c:#e1306c}.discord{--c:#5865f2}
+
+  .btn.big{padding:20px 20px;border-color:color-mix(in srgb,var(--c) 45%,var(--line));
+    background:linear-gradient(90deg,color-mix(in srgb,var(--c) 18%,var(--card)),var(--card))}
+  .btn.big .dot{width:50px;height:50px;font-size:17px}
+  .btn.big b{font-size:20px}
+  .small-links{text-align:center;padding-top:4px}
+  .small-links a{color:var(--muted);text-decoration:none;font-size:15px;
+    border:1px solid var(--line);border-radius:999px;padding:6px 16px;display:inline-block}
+  .small-links a:hover{color:var(--text);border-color:#e1306c}
+  .muted-line{color:var(--muted);font-size:15px}
+  .muted-line a{color:var(--accent2)}
+
+  /* Unterstützen */
+  .support{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .support .card{padding:16px}
+  .support b{display:block;margin-bottom:4px}
+  .support span{color:var(--muted);font-size:15px}
+
+  /* Kontakt */
+  .mail{font-weight:600;color:var(--accent2);text-decoration:none;word-break:break-all}
+
+  footer{text-align:center;color:var(--muted);font-size:14px;padding:36px 0 48px;
+    border-top:1px solid var(--line);margin-top:40px}
+  footer .logo{display:block;margin:0 auto 16px;border-radius:20px;box-shadow:0 0 30px rgba(34,211,238,.25)}
+  footer a{color:var(--muted);margin:0 10px}
+</style>
+</head>
+<body>
+<div class="hero">
+ <div class="wrap">
+  <header>
+    <img class="avatar" src="avatar.jpg" alt="Avatar von PacoRepoSo" width="112" height="112">
+    <h1><span>PacoRepoSo</span></h1>
+    <p class="tagline">Gaming · Livestreams · Technik</p>
+  </header>
+ </div>
+</div>
+<div class="wrap">
+
+  <section id="ueber-mich">
+    <h2>Über mich</h2>
+    <div class="card">
+      <p>Hey, ich bin <strong>Paco</strong>! Ich streame aus Spaß an der Sache – kein Druck, kein Business, einfach zocken und mit euch quatschen.</p>
+      <p>Neben dem Gaming ist Technik mein zweites Hobby: PCs bauen, einrichten, optimieren und rumbasteln, bis alles läuft. Wenn du Fragen dazu hast, frag einfach im Stream oder auf dem Discord.</p>
+      <p>Schau live auf Twitch vorbei, sag Hallo im Chat und komm in die Community!</p>
+      <p><strong>Streamzeiten:</strong> [Platzhalter – z. B. „meist abends, je nach Schichtplan“]</p>
+    </div>
+  </section>
+
+  <section id="links">
+    <h2>Hier findest du mich</h2>
+    <div class="links">
+      <a class="btn big twitch" href="https://www.twitch.tv/pacoreposo" target="_blank" rel="noopener">
+        <span class="dot">TV</span><span><b>Twitch</b><small>Live dabei sein – hier passiert's</small></span><span class="arrow">›</span>
+      </a>
+      <a class="btn big discord" href="https://discord.gg/6CXZU9y3ng" target="_blank" rel="noopener">
+        <span class="dot">DC</span><span><b>Discord</b><small>Community, Gaming & Technik-Talk</small></span><span class="arrow">›</span>
+      </a>
+      <a class="btn youtube" href="https://www.youtube.com/@pacoreposo" target="_blank" rel="noopener">
+        <span class="dot">▶</span><span><b>YouTube</b><small>Videos & Highlights</small></span><span class="arrow">›</span>
+      </a>
+      <div class="small-links">
+        <a href="https://www.instagram.com/paco.reposo/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="technik">
+    <h2>Technik &amp; Setup</h2>
+    <div class="card">
+      <p>PC bauen, Windows und Linux einrichten, Streaming-Setup tüfteln, eigener Heimserver – das ist der zweite Teil meines Hobbys.</p>
+      <!-- Optional: Hier kannst du später dein Setup auflisten (Gaming-PC, Streaming-PC, Peripherie) -->
+      <p>Du willst wissen, womit ich streame, oder brauchst Hilfe beim eigenen Build? Frag im Stream oder im Discord-Kanal.</p>
+    </div>
+  </section>
+
+  <section id="unterstuetzen">
+    <h2>Unterstützen</h2>
+    <div class="card">
+      <p>Ich mach das alles aus Spaß – die beste Unterstützung ist, live vorbeizuschauen, zu folgen und auf dem Discord dabei zu sein.</p>
+      <p class="muted-line">Wer trotzdem mal einen Kaffee ausgeben mag: <a href="https://ko-fi.com/pacoreposo" target="_blank" rel="noopener">Ko-fi</a> 💜</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="card">
+      <p>Für Anfragen, Kooperationen oder Feedback erreichst du mich per E-Mail:</p>
+      <p><span class="js-mail"></span><noscript>[E-Mail-Adresse – bitte JavaScript aktivieren oder ins Impressum schauen]</noscript></p>
+      <p>Oder schreib mir einfach auf <a href="https://discord.gg/6CXZU9y3ng" target="_blank" rel="noopener">Discord</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <img class="logo" src="logo.jpg" alt="Paco Logo" width="96" height="96">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <p>© <span id="jahr"></span> PacoRepoSo</p>
+  </footer>
+</div>
+
+<script>
+  // E-Mail wird erst im Browser zusammengesetzt (Schutz vor einfachen Adress-Sammel-Bots).
+  // HIER ANPASSEN: Teil vor dem @ deiner WEB.DE-Adresse
+  var u = "DEINE-ADRESSE", d = "web" + "." + "de";
+  document.querySelectorAll(".js-mail").forEach(function(el){
+    var m = u + "@" + d, a = document.createElement("a");
+    a.href = "mai" + "lto:" + m; a.textContent = m; a.className = "mail";
+    el.appendChild(a);
+  });
+  document.getElementById("jahr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
